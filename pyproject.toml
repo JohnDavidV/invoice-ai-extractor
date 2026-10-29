@@ -1,0 +1,17 @@
+[project]
+name = "invoice-ai-extractor"
+version = "1.0.0"
+description = "Extract tax ID, supplier, invoice number, dates and totals from supplier invoices with OCR, rules and a grounded local LLM."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008"]  # FastAPI dependency-injection idiom (File(...), Form(...))
